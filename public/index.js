@@ -96,7 +96,7 @@ $(document).ready(function() {
         $.post( "http://localhost:5000/message", { message, name: profile.name } );
     });
   }
-  
+
 
 
 });
