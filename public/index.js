@@ -2,17 +2,29 @@ $(document).ready(function() {
   // Initiating our Auth0Lock
   let lock = new Auth0Lock(
     '0meuN7nt1wo8g1G98g8JKOPrgsk63gUe',
-    'thetruth219.auth0.com', //example: lotus.auth0.com
+    'thetruth219.auth0.com',
     {
       auth: {
         params: {
           scope: 'openid profile'
-        }
+        },
+        connectionScopes: {
+          'facebook': ['email', 'user_link']
+        },
+        sso:false
       },
+      allowAutocomplete: true,
       autoclose: true,
       closable: false,
-      rememberLastLogin: true
+      rememberLastLogin: true,
+      allowShowPassword: true,
+      theme: {
+      logo: 'https://pr.network/img/logo_mobile.svg',
+      primaryColor: '#35c982'
+      },
     }
+
+
   );
 
   // Listening for the authenticated event
@@ -48,7 +60,7 @@ $(document).ready(function() {
       localStorage.clear();
       isAuthenticated = false;
       lock.logout({
-          returnTo: "http://localhost:5000"
+          returnTo: "http://localhost:3000"
       });
   }
   function onMessageAdded(data) {
@@ -81,8 +93,9 @@ $(document).ready(function() {
         const message = $("#message").val();
         $("#message").val("");
             //send message
-        $.post( "http://localhost:5000/message", { message, name: profile.name } );
+        $.post( "http://localhost:3000/message", { message, name: profile.name } );
     });
   }
+  
 
 });

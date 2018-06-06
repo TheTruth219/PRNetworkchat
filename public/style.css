@@ -3,10 +3,14 @@
   body {
     background-color: lightgray;
   }
+
   .form-group {
     margin-top:10em;
   }
-
+  .form-control {
+    width:80%;
+    display: inline-block;
+  }
    .chat
    {
        list-style: none;
@@ -33,14 +37,55 @@
        margin: 0;
        color: #777777;
    }
+   .send-button {
+     float: right;
+     position:relative;
+     right: 4em;
+     padding-top: 3.5px;
+   }
+   .btn {
+     border: 2px solid #35c982;
+     background: transparent;
+     color: #35c982;
+   }
    .panel .slidedown .glyphicon, .chat .glyphicon
    {
        margin-right: 5px;
+   }
+   .glyphicon-option-horizontal {
+     color: white;
+     font-size: 20px;
+   }
+
+
+   .btn-default {
+     background-color: transparent ;
+     background-image: none;
+     border: none;
+     box-shadow: none;
+
+   }
+   .btn-default.active.focus, .btn-default.active:focus, .btn-default.active:hover, .btn-default:active.focus, .btn-default:active:focus, .btn-default:active:hover, .open>.dropdown-toggle.btn-default.focus, .open>.dropdown-toggle.btn-default:focus, .open>.dropdown-toggle.btn-default:hover {
+     color: white;
+     background-color: transparent;
+     border-color: transparent;
+   }
+   .btn-group.open .dropdown-toggle {
+     box-shadow: none;
    }
    .body-panel
    {
        overflow-y: scroll;
        height: 250px;
+   }
+   .panel-primary {
+     border-color: darkgray;
+   }
+
+   .panel-primary>.panel-heading {
+     background-color: #35c982 !important;
+     background-image: none;
+     border-color: silver;
    }
    ::-webkit-scrollbar-track
    {
