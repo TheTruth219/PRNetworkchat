@@ -60,7 +60,7 @@ $(document).ready(function() {
       localStorage.clear();
       isAuthenticated = false;
       lock.logout({
-          returnTo: "http://localhost:5000"
+          returnTo: "http://localhost:3000"
       });
   }
   function onMessageAdded(data) {
@@ -93,9 +93,10 @@ $(document).ready(function() {
         const message = $("#message").val();
         $("#message").val("");
             //send message
-        $.post( "http://localhost:5000/message", { message, name: profile.name } );
+        $.post( "http://localhost:3000/message", { message, name: profile.name } );
     });
   }
+  
 
 
 });
