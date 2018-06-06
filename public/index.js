@@ -60,7 +60,7 @@ $(document).ready(function() {
       localStorage.clear();
       isAuthenticated = false;
       lock.logout({
-          returnTo: "http://localhost:5000"
+          returnTo: "https://prnetwork-chat.herokuapp.com"
       });
   }
   function onMessageAdded(data) {
@@ -93,7 +93,7 @@ $(document).ready(function() {
         const message = $("#message").val();
         $("#message").val("");
             //send message
-        $.post( "http://localhost:5000/message", { message, name: profile.name } );
+        $.post( "https://prnetwork-chat.herokuapp.com/message", { message, name: profile.name } );
     });
   }
 
